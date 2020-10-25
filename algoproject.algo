@@ -1,0 +1,32 @@
+ALGORITHM compteur_char
+VAR
+    str :string;
+    // nb_c le nombre de caractere total
+    // nb_m le nombre de mot
+    // nb_v le nombre de voyelle
+    nb_v : INTEGER :=0;
+    nb_c : INTEGER :=0;
+    nb_m : INTEGER :=0;
+
+BEGIN
+    Read ("write a sentence", str);
+    str =str.lower ();
+// le nombre de caractere total et le nombre de mot
+FOR i FROM i=0 TO i<str.length STEP i++  DO
+    IF (str.charAT[i]!= " ") THEN
+        nb_c := nb_c + 1;
+    ELSE
+        nb_m := nb_m + 1;
+    END_IF
+END_FOR
+FOR i FROM i=0 TO i<str.length STEP i++  DO
+IF ((str.charAt(i) == 'a' || str.charAt(i) == 'e' || str.charAt(i) == 'i' || str.charAt(i) == 'o' || str.charAt(i) == 'u')) THEN
+    nb_v := nb_v + 1 ;
+END_IF
+END_FOR
+write ("le nombre de caractere total est", nb_c);
+
+write ("le nombre de voyelle est",nb_v);
+
+write ("le nombre de mots total est", nb_m);
+END
